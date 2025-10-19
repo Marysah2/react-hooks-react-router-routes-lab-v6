@@ -2,15 +2,13 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import MovieCard from "../components/MovieCard";
 
+const movies = [
+  { id: 1, title: "Doctor Strange", time: 115, genres: ["Action", "Adventure", "Fantasy"] },
+  { id: 2, title: "Trolls", time: 92, genres: ["Animation", "Adventure", "Comedy", "Family", "Fantasy"] },
+  { id: 3, title: "Jack Reacher: Never Go Back", time: 118, genres: ["Action", "Adventure", "Crime", "Mystery", "Thriller"] }
+];
+
 function Home() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:4000/movies")
-      .then(r => r.json())
-      .then(data => setMovies(data));
-  }, []);
-
   return (
     <>
       <header>
